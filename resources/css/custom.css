@@ -1,0 +1,91 @@
+.Fare{
+	font-size: 12px;
+    position: relative;
+    top: -19px;
+    right: -6px;
+    float: right;
+    color: white;
+    background-color: #146EAD;
+    padding: 5px;
+    border-radius: 6px;
+	
+}/*
+.x-button-normal.x-button.x-layout-box-item.x-stretched.Buttons{
+	width:20%;
+	color:red;
+	
+}*/
+.x-button.Buttons{
+background-image: none;
+    background-color: #33CCFF;
+    //background-image: -webkit-linear-gradient(top, #000000, #000000 3%, #ffffff);
+    width:20%;
+    height:10%;
+    
+}
+
+.x-button.Driver{
+background-image: none;
+    background-color: red;
+    //background-image: -webkit-linear-gradient(top, #000000, #000000 3%, #ffffff);
+    width:29%;
+    height:10%;
+    
+}
+
+.x-button.ButtonsR{
+background-image: none;
+    background-color: red;
+    //background-image: -webkit-linear-gradient(top, #000000, #000000 3%, #ffffff);
+    width:20%;
+    height:10%;
+    
+}
+
+.centerSet{
+	width: 100%;
+    color: black;
+    text-align: center;
+    border: 1px solid #136199;
+    margin-top: 1px;
+    background-color: white;
+   
+}
+.x-list.disc .x-list-disclosure:before{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: 'View';
+     font-family: '';
+    color: #fff;
+    font-size: 23px;
+    text-align: center;
+    line-height: 29px;
+    text-shadow: 0 0 0;
+}
+.x-list.disc .x-list-disclosure{
+position: relative;
+    overflow: visible;
+    border: 1px solid black;
+    -webkit-border-radius: 32px;
+    -moz-border-radius: 32px;
+    -ms-border-radius: 32px;
+    -o-border-radius: 32px;
+    border-radius: 0px;
+    background-image: none;
+    background-color: #006bb6;
+    background-image: -webkit-linear-gradient(top, #0398ff, #007ad0 3%, #005c9d);
+    background-image: -moz-linear-gradient(top, #0398ff, #007ad0 3%, #005c9d);
+    background-image: -o-linear-gradient(top, #0398ff, #007ad0 3%, #005c9d);
+    background-image: -ms-linear-gradient(top, #0398ff, #007ad0 3%, #005c9d);
+    width: 71px;
+    height: 30px;
+    margin: 7px 7px 0 0;
+}
+/*.x-list.disc .x-list-disclosure:before{content:'Reschedule';font-family:'Comic Sans MS';font-size:15px}
+.x-list.event-list .x-list-disclosure:before{content:'Edit';font-family:'Comic Sans MS';font-size:15px}
+.x-list.event-list .x-list-item-tpl .x-list-disclosure{border-radius:0px;width:25%}
+.x-list.past-event-list .x-list-item-tpl .x-list-disclosure{border-radius:0px;width:25%}
+.x-list.people-list .x-list-disclosure:before{content:'*'}*/
