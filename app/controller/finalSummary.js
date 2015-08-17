@@ -30,7 +30,8 @@ Ext.define('myBooking.controller.finalSummary',{
         pType:'pType #AmountPayable',
         paymentdetailsid:'paymentdetails #paymentdetails',
         ticketno:'confirmyourbooking #ticketno',
-        finalSummary:'finalSummary'
+        finalSummary:'finalSummary',
+        noOfTickets:'showDetails #noOfTickets',
         
       },
       control : {
@@ -48,6 +49,10 @@ Ext.define('myBooking.controller.finalSummary',{
    },
   	MoveToHomeCmd:function(){
   		console.log('MoveToHomeCmd -in');
+  		var seatNumberCount=this.getNoOfTickets()._html;
+  		for(var i=7;i<(seatNumberCount+7);i++){
+  		this.getFinalSummary().removeAt(7);
+  		  		}
    		Ext.Viewport.animateActiveItem(this.getMain(),this.slideLeftTransition);
   	},
 

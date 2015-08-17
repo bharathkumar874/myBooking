@@ -115,7 +115,7 @@ Ext.define('myBooking.controller.BoardingPoint',{
 			var store=Ext.getStore('seatNumberStore');
 			store.each(function(item,index,id){
 				//seatsArr.push(item.getData().seatNumber);
-				seats+=item.getData().seatNumber+','
+				seats +=item.getData().seatNumber+',';
 			});
 			//console.log(seatsArr);
 			seats=seats.substring(0,seats.length-1);

@@ -26,7 +26,10 @@ Ext.define('myBooking.controller.PaymentDetails',{
         paymentdetailsid:'paymentdetails #paymentdetails',
         ticketno:'showDetails #ticketno',
         finalSummary:'finalSummary',
+        totalpassenger: 'totalpassenger',
+        formfield:'formfield',
         //summary Display
+        
         transActionIdShow:'finalSummary #TransActionIdShow',
         TicketNoShow:'finalSummary #TicketNoShow',
         travelDetails:'finalSummary #travelDetails',
@@ -167,6 +170,18 @@ Ext.define('myBooking.controller.PaymentDetails',{
 	}
    	me.getFromPlace().setValue('');
     me.getToPlace().setValue('');
+    var seatNumberCount=this.getNoOfTickets()._html;
+me.getTotalpassenger().removeAll();
+console.log(me.getShowDetails());
+		
+	for(var i=9; i<(seatNumberCount+9); i++)
+	{
+		//var view = Ext.create('myBooking.view.formfield');
+		
+		//me.getShowDetails().removeAt(7);
+		me.getShowDetails().removeAt(9);
+				
+		}
    // me.getBuseslist().setData('');
    },
    PaymentBackButtonCmd:function(){

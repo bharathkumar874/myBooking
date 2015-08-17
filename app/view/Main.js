@@ -11,6 +11,7 @@ Ext.define('myBooking.view.Main', {
             {
                 xtype:'titlebar',
                 title:'myBus Booking',
+                cls:'mainTitle',
                 docked:'top'
             },
             {
@@ -18,6 +19,7 @@ Ext.define('myBooking.view.Main', {
                text:'Book a Ticket',
                ui:'action',
                itemId:'BookTicket',
+               cls:'mainScreenButton',
                style:{
                     marginTop:'45px',
                     width:'60%',
@@ -29,6 +31,7 @@ Ext.define('myBooking.view.Main', {
                 text:'Cancel Ticket',
                 ui:'action',
                 itemId:'cancelTicketView',
+                cls:'mainScreenButton',
                 style:{
                 marginTop:'45px',
                 width:'60%',
@@ -40,6 +43,7 @@ Ext.define('myBooking.view.Main', {
                text:'myBookings',
                 ui:'action',
                 itemId:'myBookings',
+                cls:'mainScreenButton',
                 style:{
                 marginTop:'45px',
                 width:'60%',
@@ -49,9 +53,11 @@ Ext.define('myBooking.view.Main', {
             {
                 xtype:'button',
                text:'About us',
+               cls:'mainScreenButton',
                ui:'action',
                 style:{
                      marginTop:'45px',
+                     
                      width:'60%',
                      marginLeft:'22%'
                       }
@@ -59,6 +65,7 @@ Ext.define('myBooking.view.Main', {
             {
                 xtype:'titlebar',
                 docked:'bottom',
+                cls:'mainTitle',
                 title:' myBus (2000-2015) All rights reserved.'
             }
 

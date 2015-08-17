@@ -84,8 +84,11 @@ position: relative;
     height: 30px;
     margin: 7px 7px 0 0;
 }
-/*.x-list.disc .x-list-disclosure:before{content:'Reschedule';font-family:'Comic Sans MS';font-size:15px}
-.x-list.event-list .x-list-disclosure:before{content:'Edit';font-family:'Comic Sans MS';font-size:15px}
-.x-list.event-list .x-list-item-tpl .x-list-disclosure{border-radius:0px;width:25%}
-.x-list.past-event-list .x-list-item-tpl .x-list-disclosure{border-radius:0px;width:25%}
-.x-list.people-list .x-list-disclosure:before{content:'*'}*/
+.x-button.x-button-action.mainScreenButton{
+	background-image: none;
+    background-color: #D84040;
+}
+.x-toolbar-dark.mainTitle{
+	background-image: none;
+    background-color: #D84040;
+}
