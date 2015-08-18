@@ -44,6 +44,7 @@ Ext.define('myBooking.view.EditBooking', {
 								}
              			          ]
              			 },
+             			
 				{
 				xtype:'panel',
 				style:{height:'100%',textAlign:'center',position:'relative',border:'1px solid black',marginTop:'1px'},

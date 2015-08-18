@@ -1,7 +1,6 @@
 Ext.define('myBooking.controller.myBookings',{
  extend : 'Ext.app.Controller',
-// requires:['Ext.app.History'],
- 
+
    config : {
       refs : {
         main:'main',
@@ -45,6 +44,18 @@ Ext.define('myBooking.controller.myBookings',{
 		totalAmount:'editBooking #TotalAmount',
 		points:'editBooking #points',
 		refund:'editBooking #refund',
+		
+		
+		 	panelShowC:'cancelledView #panelShow',
+			statusShowC:'cancelledView #status',
+			ticketgetC:'cancelledView #ticketget',
+			fareAmountC:'cancelledView #fareAmount',
+			namesC:'cancelledView #Names',
+			fromToC:'cancelledView #FromTo',
+			totalAmountC:'cancelledView #TotalAmount',
+			pointsC:'cancelledView #points',
+		
+		statusColor:'myBookings #statusColor',
 		cancelpopup:'cancelpopup',
 		editScreen:'editScreen',
 		dateSelectEdit:'editScreen #dateSelect',
@@ -61,6 +72,7 @@ Ext.define('myBooking.controller.myBookings',{
         boardingpointedit:'boardingpointedit',
         editDroppingPlaces:'droppingpointedit #DroppingPlaces',
         editBoardingPlaces:'boardingpointedit #BoardingPlaces',
+        cancelledView:'cancelledView'
       },
       control : {
 	        main:{
@@ -68,7 +80,8 @@ Ext.define('myBooking.controller.myBookings',{
 	        },
 	        myBookings:{
 	        	onmyBookingBackCmd:'myBookingBackCmd',
-	        	onDisclosureCmd:'DisclosureCmd'
+	        	onDisclosureCmd:'DisclosureCmd',
+	        	onsearchBoxCmd:'onSearchKeyUp'
 	        },
 	        editBooking:{
 	        	onEditBackButtonCmd:'EditBackButtonCmd',
@@ -89,9 +102,28 @@ Ext.define('myBooking.controller.myBookings',{
 	        },
 	        droppingpointedit:{
 				onSaveDroppingEditCmd:'SaveDroppingEditCmd'
+	        },
+	        cancelledView:{
+	        	onCancelledViewCmd:'CancelledViewCmd'
 	        }
+	        
       }
 
+   },
+   onSearchKeyUp: function(searchField) {
+		var store = Ext.getStore("paymentDetails");
+  	    console.log("Searching");
+	    store.clearFilter();
+	    store.filterBy(function(record, id){
+	        var regex = new RegExp(searchField);
+	        return regex.test(record.get('TicketNo'));
+	    });
+	
+	    store.load();
+   },
+   CancelledViewCmd:function(){
+   		console.log('cancelled back button pressed');
+   		Ext.Viewport.animateActiveItem(this.getMyBookings(), this.slideRightTransition);
    },
    bpointCmd:function(){
 		this.getBoardingpointedit().show();
@@ -156,6 +188,7 @@ Ext.define('myBooking.controller.myBookings',{
     	},
    myBookingsCmd:function(){
    		console.log('myBookingsCmd -in');
+   		
    		//Ext.Viewport.animateActiveItem(this.getMain(),this.slideLeftTransition);
    		Ext.Viewport.animateActiveItem(this.getMyBookings(), this.slideLeftTransition);
    },
@@ -165,10 +198,6 @@ Ext.define('myBooking.controller.myBookings',{
    },
    DisclosureCmd:function(record){
 		console.log('DisclosureCmd -in');
-		/*var NewDate=record._data.date;
-		console.log(NewDate);
-		var updateDate=new Date(NewDate);
-		console.log(updateDate);*/
 		var TicketNo=record._data.TicketNo;
 		var Name=record._data.Name;
 		var TransId=record._data.TransId;
@@ -183,6 +212,29 @@ Ext.define('myBooking.controller.myBookings',{
 		var Timing=record._data.Timing;
 		var status=record._data.status;
 		var amountPayable=record._data.amountPayable;
+		if(record._data.status =='cancelled')
+		{
+			//Ext.Msg.alert("Ticked is already Cancelled");
+			//return;
+			//this.getEditBooking().removeAt(1);
+			this.getPanelShowC().setHtml('<p>Transaction Id <p>'+'<b>'+ TransId+'</b>'+'<p>Ticket Number</p>');
+			this.getTicketgetC().setHtml(TicketNo);
+			this.getStatusShowC().setHtml('Ticket status: '+status);
+			this.getPointsC().setHtml('<p>BoardingPoint: '+bPoint+'</p>'+'<p>DroppingPoint: '+dPoint+'</p>');
+			
+			this.getFromToC().setHtml('From Place: '+'<b>'+ fromPlace+'</b>'+'<p></p>'+'To Place: '+'<b>'+ toPlace+'</b>'+'<p></p>'+'Bus Service Name: '+'<b>'+ BusService+'</b>'+'<p></p>'+'Date: '+'<b>'+ date+' ' +Timing+'</b>');
+			this.getNamesC().setHtml('<p>Passenger Names</p>'+'<b>'+ Name+'</b>');
+			this.getFareAmountC().setHtml('<p>No.of Tickets Booked </p>'+'<b>'+seatNumbercount+'</b>'+'<p>Total Fare Amount</p>');
+			this.getTotalAmountC().setHtml(amountPayable);
+			Ext.Viewport.animateActiveItem(this.getCancelledView(), this.slideLeftTransition);
+			return;
+			
+		}
+		/*var NewDate=record._data.date;
+		console.log(NewDate);
+		var updateDate=new Date(NewDate);
+		console.log(updateDate);*/
+		
 		this.getPanelShow().setHtml('<p>Transaction Id <p>'+'<b>'+ TransId+'</b>'+'<p>Ticket Number</p>');
 		this.getTicketget().setHtml(TicketNo);
 		this.getStatusShow().setHtml('Ticket status: '+status);
@@ -249,8 +301,10 @@ Ext.define('myBooking.controller.myBookings',{
 
 			Ext.Msg.alert('Ticked Cancelled');
 			//me.getTicketNumber().setValue('');
-
+		//this.getEditBooking().removeAt(1);
 		this.getCancelpopup().hide();
+		
+		
 		Ext.Viewport.animateActiveItem(this.getMain(), this.slideLeftTransition);
 
 

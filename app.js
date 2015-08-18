@@ -24,7 +24,7 @@ Ext.application({
     views: [
         'Main','Booking','Buses','SelectSeat','To','From','BoardingPoint','DroppingPoint','PassengerDetails','ConfirmYourBooking',
         'PaymentDetails','finalSummary', 'TotalPassengerfields','formfield','showDetails','panelShowDetails','panelSummary','CancelTicket',
-        'cancelSummary','myBookings','EditBooking','cancelPopup','EditScreen','BoardingPointEdit','DroppingPointEdit'
+        'cancelSummary','myBookings','EditBooking','cancelPopup','EditScreen','BoardingPointEdit','DroppingPointEdit','CancelledView'
     ],
 
     icon: {
@@ -72,10 +72,11 @@ Ext.application({
         var EditScreen=Ext.create('myBooking.view.EditScreen');
         var BoardingPointEdit=Ext.create('myBooking.view.BoardingPointEdit');
         var DroppingPointEdit=Ext.create('myBooking.view.DroppingPointEdit');
+        var CancelledView=Ext.create('myBooking.view.CancelledView');
         // Initialize the main view
         Ext.Viewport.add(Ext.create('myBooking.view.Main'), Booking,From,To,Buses,Seats,PassengerDetails,PaymentDetails,finalSummary, 
         TotalPassengerfields,formfield,showDetails,panelShowDetails,panelSummary,CancelTicket,cancelSummary,myBookings,EditBooking,
-        cancelPopup,EditScreen,BoardingPointEdit,DroppingPointEdit);
+        cancelPopup,EditScreen,BoardingPointEdit,DroppingPointEdit,CancelledView);
     },
 
     onUpdated: function() {

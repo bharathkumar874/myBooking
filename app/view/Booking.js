@@ -1,6 +1,7 @@
 Ext.define('myBooking.view.Booking', {
     extend: 'Ext.Container',
     xtype: 'booking',
+    cls:'Booking',
     requires: [
         'Ext.TitleBar',
         'Ext.form.Panel'
@@ -16,45 +17,42 @@ Ext.define('myBooking.view.Booking', {
                 xtype:'titlebar',
                 title:'Book my Ticket',
                 docked:'top',
+                cls:'mainTitle',
                 items: [
 			        {
-			            iconCls: 'home',
+			            //iconCls: 'home',
 			            //align: 'left',
 			            text:'Back',
+			            cls:'buttonTop',
 			            xtype:'button',
 			            itemId:'back'
 			        }
 			        ]
             },
             {
+            	xtype:'panel',
+            	html: '<img style="height: 125px; width: 125px; margin-left:33%" src="http://png-3.findicons.com/files/icons/978/cem_transport/128/travel_bus.png" />'
+            },
+        {
             	xtype:'fieldset',
             	title:'Booking',
-            	height:'500px',
+            	height:'236px',
+            	style:{
+            		marginTop:'58px'
+            		
+            	},
             	items:[
-            	/*{
-            		xtype:'button',
-            		text:'popup',
-            		action:'showPopup',
-            		itemId:'popup'
-            	},*/
+            	
             		{
 		                xtype:'textfield',
 						name:'From',
 						label:'From Place',
 						itemId:'FromPlaces',
 						required:true,
+						//id:'labelWidth',
+						labelWidth:'36%', 
 						placeHolder:'Enter From place',
-						/*options:[
-								{text:'Hyderabad',value:'Hyderabad'},
-								{text:'Chennai',value:'Chennai'},
-								{text:'Banglore',value:'Banglore'},
-								{text:'Mumbai',value:'Mumbai'},
-								{text:'Pune',value:'Pune'},
-								{text:'Kolkatta',value:'Kolkatta'},
-								{text:'Delhi',value:'Delhi'},
-								{text:'Bopal',value:'Bopal'},
-								{text:'Bihar',value:'Bihar'}
-						]*/
+						
             		},
             		{
 		                xtype:'textfield',
@@ -62,6 +60,7 @@ Ext.define('myBooking.view.Booking', {
 						label:'To Place',
 						required:true,
 						itemId:'popup',
+						labelWidth:'36%', 
 						placeHolder:'Enter To place'
             		},
             		{
@@ -70,6 +69,7 @@ Ext.define('myBooking.view.Booking', {
 						label:'Date of Journey',
 						required:true,
 						itemId:'dateSelect',
+						labelWidth:'46%', 
 						placeHolder:'Select Date Of Journey',
 						value: new Date(),
 						picker:{
@@ -80,6 +80,7 @@ Ext.define('myBooking.view.Booking', {
 					{
 		                xtype:'datepickerfield',
 						name:'Return',
+						labelWidth:'46%',
 						label:'Return Date',
 						placeHolder:"Select Return Date",
 						//required:true,
@@ -100,6 +101,7 @@ Ext.define('myBooking.view.Booking', {
 						text:'Find Buses',
 						ui:'action',
 						itemId:'findBuses',
+						cls:'button1',
 						docked:'bottom'
 					}
             	
