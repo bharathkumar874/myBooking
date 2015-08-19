@@ -16,15 +16,15 @@ Ext.application({
     requires: [
         'Ext.MessageBox'
     ],
-    controllers:['Booking','Buses','Seats','To','From','seatSelect', 'DatabaseController','BoardingPoint','databaseFunctions','PassengerDetails','confirmSummary','PaymentDetails','finalSummary',
-    			'CancelTicket','myBookings'],
+    controllers:['Booking','Buses','seatEdit','To','From','seatSelect', 'DatabaseController','BoardingPoint','databaseFunctions','PassengerDetails','confirmSummary','PaymentDetails','finalSummary',
+    			'CancelTicket','myBookings','ChangeSeat'],
     stores:['BusList','places','BoardingPoint','DroppingPoint','seatNumber','PassengerDetails','PaymentDetails','CurrentSeats','panel','BpointList','DpointList','BusesAvailableList'],
     models:['BusList','places','BoardingPoint','DroppingPoint','Booking','seatNumber','PassengerDetails','PaymentDetails','CurrentSeats','panel','BpointList','DpointList','BusesAvailableList'],
 
     views: [
         'Main','Booking','Buses','SelectSeat','To','From','BoardingPoint','DroppingPoint','PassengerDetails','ConfirmYourBooking',
         'PaymentDetails','finalSummary', 'TotalPassengerfields','formfield','showDetails','panelShowDetails','panelSummary','CancelTicket',
-        'cancelSummary','myBookings','EditBooking','cancelPopup','EditScreen','BoardingPointEdit','DroppingPointEdit','CancelledView'
+        'cancelSummary','myBookings','EditBooking','cancelPopup','EditScreen','BoardingPointEdit','DroppingPointEdit','CancelledView','ChangeSeat'
     ],
 
     icon: {
@@ -73,10 +73,12 @@ Ext.application({
         var BoardingPointEdit=Ext.create('myBooking.view.BoardingPointEdit');
         var DroppingPointEdit=Ext.create('myBooking.view.DroppingPointEdit');
         var CancelledView=Ext.create('myBooking.view.CancelledView');
+        var ChangeSeat=Ext.create('myBooking.view.ChangeSeat');
+
         // Initialize the main view
         Ext.Viewport.add(Ext.create('myBooking.view.Main'), Booking,From,To,Buses,Seats,PassengerDetails,PaymentDetails,finalSummary, 
         TotalPassengerfields,formfield,showDetails,panelShowDetails,panelSummary,CancelTicket,cancelSummary,myBookings,EditBooking,
-        cancelPopup,EditScreen,BoardingPointEdit,DroppingPointEdit,CancelledView);
+        cancelPopup,EditScreen,BoardingPointEdit,DroppingPointEdit,CancelledView,ChangeSeat);
     },
 
     onUpdated: function() {

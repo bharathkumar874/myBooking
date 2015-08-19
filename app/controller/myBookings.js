@@ -72,7 +72,8 @@ Ext.define('myBooking.controller.myBookings',{
         boardingpointedit:'boardingpointedit',
         editDroppingPlaces:'droppingpointedit #DroppingPlaces',
         editBoardingPlaces:'boardingpointedit #BoardingPlaces',
-        cancelledView:'cancelledView'
+        cancelledView:'cancelledView',
+        changeseat:'changeseat'
       },
       control : {
 	        main:{
@@ -359,6 +360,7 @@ Ext.define('myBooking.controller.myBookings',{
 			store.sync();
 			console.log("Record Updated");
 		}
+		
 
 		Ext.Viewport.animateActiveItem(this.getMain(), this.slideLeftTransition);
 	},
@@ -384,6 +386,26 @@ Ext.define('myBooking.controller.myBookings',{
 		this.getDateSelectEdit().setValue(dateFormat);
 		this.getBpointEdit().setValue(bPoint);
 		this.getDpointEdit().setValue(dPoint);
+		
+		var storeEdit=Ext.getStore('paymentDetails');
+      	var indexEdit=storeEdit.findExact('TicketNo',this.getTicketgetEditScreen()._html);
+      	var recordEdit=store.getAt(indexEdit);
+      	var count=record._data.seatNumbercount;
+      	
+      	console.log(count);
+      	
+		var seats=new Array(1,3,4,7,10,20,22,26,28,30,34);      			
+		for(var i=0;i<seats.length;i++){
+			var changeColor=seats[i];
+			this.getChangeseat().down('#'+changeColor).setUi('action');
+			this.getChangeseat().down('#'+changeColor).setText('A');
+		}
+		var seats=new Array(2,8,14,21,25,24,27,31,33);      			
+		for(var i=0;i<seats.length;i++){
+			var changeColor=seats[i];
+			this.getChangeseat().down('#'+changeColor).setUi('decline');
+			this.getChangeseat().down('#'+changeColor).setText('B');
+		}
 
 
 

@@ -32,6 +32,19 @@ Ext.define('myBooking.view.EditScreen', {
 			    docked:'bottom',
 			    text:'Edit Confirm'
 			 },
+			  {
+			 		xtype:'button',
+			 		ui:'action',
+			 		docked:'bottom',
+			 		itemId:'seatsChange',
+			 		action:'Edit',
+			 		text:'Change Seat',
+			 		style:{
+			 			    marginBottom: '10%',
+                            marginLeft: '23%',
+                            width:'55%'
+			 		}
+			 },
 			 {
 				xtype:'panel',
 				style:{height:'45px',textAlign:'center',position:'relative',border:'1px solid black',marginTop:'4px'},
@@ -84,18 +97,7 @@ Ext.define('myBooking.view.EditScreen', {
 
 					]
 			 },
-			 {
-			 		xtype:'button',
-			 		ui:'action',
-			 		docked:'bottom',
-			 		itemid:'seatChange',
-			 		text:'Change Seat',
-			 		style:{
-			 			    marginBottom: '10%',
-                            marginLeft: '23%',
-                            width:'55%'
-			 		}
-			 }
+			
 
 
 
@@ -123,6 +125,11 @@ Ext.define('myBooking.view.EditScreen', {
 					event:'focus',
 					fn:'ondpoint'
             	},
+            	{
+            		delegate:'#seatsChange',
+            		event:'tap',
+            		fn:'onSeatChange'
+            	}
 
 
             	]
@@ -143,6 +150,10 @@ Ext.define('myBooking.view.EditScreen', {
         ondpoint:function(){
 			console.log('ondpointCmd');
 			this.fireEvent('ondpointCmd',this);
+		},
+		onSeatChange:function(){
+			console.log('onSeatChangeCmd');
+			this.fireEvent('onseatChangeCmd',this);
 		}
 
 
