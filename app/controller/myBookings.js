@@ -1,288 +1,281 @@
-Ext.define('myBooking.controller.myBookings',{
- extend : 'Ext.app.Controller',
+Ext.define('myBooking.controller.myBookings', {
+	extend : 'Ext.app.Controller',
 
-   config : {
-      refs : {
-        main:'main',
-        buses:'buses',
-        booking:'booking',
-        boardingpoint:'boardingpoint',
-        boardingSelect:'boardingpoint #BoardingPlaces',
-        droppingSelect:'droppingpoint #DroppingPlaces',
-        passengerdetails:'passengerdetails',
-        busesListDisplay:'buses #BusesListDisplay',
-        seats:'seats',
-        confirmyourbooking:'confirmyourbooking',
-        showDetailsid:'#showDetails',
-        fromPlace:'booking #FromPlaces',
-        toPlace:'booking #popup',
-        dateSelect:'booking #dateSelect',
-        paymentdetails:'paymentdetails',
-        amountPayable:'paymentdetails #AmountPayable',
-        pType:'pType #AmountPayable',
-        paymentdetailsid:'paymentdetails #paymentdetails',
-        ticketno:'showDetails #ticketno',
-        finalSummary:'finalSummary',
-        //summary Display
-        transActionIdShow:'finalSummary #TransActionIdShow',
-        TicketNoShow:'finalSummary #TicketNoShow',
-        travelDetails:'finalSummary #travelDetails',
-        fare:'finalSummary #fare',
-        showDetails:'showDetails',
-        myBookings:'myBookings',
-        editBooking:'editBooking',
-        dateSelectEdit:'editBooking #dateSelectEdit',
-        ticketnumberEdit:'editBooking #Ticketnumber',
-        ticketnumberPanel:'editBooking #TicketnumberPanel',
-        editBooking:'editBooking',
-		panelShow:'editBooking #panelShow',
-		statusShow:'editBooking #status',
-		ticketget:'editBooking #ticketget',
-		fareAmount:'editBooking #fareAmount',
-		names:'editBooking #Names',
-		fromTo:'editBooking #FromTo',
-		totalAmount:'editBooking #TotalAmount',
-		points:'editBooking #points',
-		refund:'editBooking #refund',
-		
-		
-		 	panelShowC:'cancelledView #panelShow',
-			statusShowC:'cancelledView #status',
-			ticketgetC:'cancelledView #ticketget',
-			fareAmountC:'cancelledView #fareAmount',
-			namesC:'cancelledView #Names',
-			fromToC:'cancelledView #FromTo',
-			totalAmountC:'cancelledView #TotalAmount',
-			pointsC:'cancelledView #points',
-		
-		statusColor:'myBookings #statusColor',
-		cancelpopup:'cancelpopup',
-		editScreen:'editScreen',
-		dateSelectEdit:'editScreen #dateSelect',
-		//onbpointCmd:'editScreen #onbpointCmd',
-		//ondpointCmd:'editScreen #ondpointCmd',
-		bpointEdit:'editScreen #bpoint',
-		dpointEdit:'editScreen #dpoint',
-		popupPanelText:'cancelpopup #popupPanelText',
-		panelShowPopup:'cancelpopup #panelShow',
-        ticketgetPopup:'cancelpopup #ticketget',
-        ticketgetEditScreen:'editScreen #ticketget',
-        panelShowEditScreen:'editScreen #panelShow',
-        droppingpointedit:'droppingpointedit',
-        boardingpointedit:'boardingpointedit',
-        editDroppingPlaces:'droppingpointedit #DroppingPlaces',
-        editBoardingPlaces:'boardingpointedit #BoardingPlaces',
-        cancelledView:'cancelledView',
-        changeseat:'changeseat'
-      },
-      control : {
-	        main:{
-	        	onmyBookingsCmd:'myBookingsCmd'
-	        },
-	        myBookings:{
-	        	onmyBookingBackCmd:'myBookingBackCmd',
-	        	onDisclosureCmd:'DisclosureCmd',
-	        	onsearchBoxCmd:'onSearchKeyUp'
-	        },
-	        editBooking:{
-	        	onEditBackButtonCmd:'EditBackButtonCmd',
-	        	oncancelTicketBtnCmd:'cancelTicketBtnCmd',
-	        	oneditTicketBtnCmd:'editTicketBtnCmd'
-	        },
-	        cancelpopup:{
-	        	oncancelConfirmCmd:'cancelConfirmCmd'
-	        },
-	        editScreen:{
-	        	onEditDetailsConfirmCmd:'EditDetailsConfirmCmd',
-	        	onEditDetailsBackButtonCmd:'EditDetailsBackButtonCmd',
-	        	onbpointCmd:'bpointCmd',
-	        	ondpointCmd:'dpointCmd'
-	        },
-	        boardingpointedit:{
-	        	onSaveBoardingEditCmd:'SaveBoardingEditCmd'
-	        },
-	        droppingpointedit:{
-				onSaveDroppingEditCmd:'SaveDroppingEditCmd'
-	        },
-	        cancelledView:{
-	        	onCancelledViewCmd:'CancelledViewCmd'
-	        }
-	        
-      }
+	config : {
+		refs : {
+			main : 'main',
+			buses : 'buses',
+			booking : 'booking',
+			boardingpoint : 'boardingpoint',
+			boardingSelect : 'boardingpoint #BoardingPlaces',
+			droppingSelect : 'droppingpoint #DroppingPlaces',
+			passengerdetails : 'passengerdetails',
+			busesListDisplay : 'buses #BusesListDisplay',
+			seats : 'seats',
+			confirmyourbooking : 'confirmyourbooking',
+			showDetailsid : '#showDetails',
+			fromPlace : 'booking #FromPlaces',
+			toPlace : 'booking #popup',
+			dateSelect : 'booking #dateSelect',
+			paymentdetails : 'paymentdetails',
+			amountPayable : 'paymentdetails #AmountPayable',
+			pType : 'pType #AmountPayable',
+			paymentdetailsid : 'paymentdetails #paymentdetails',
+			ticketno : 'showDetails #ticketno',
+			finalSummary : 'finalSummary',
+			//summary Display
+			transActionIdShow : 'finalSummary #TransActionIdShow',
+			TicketNoShow : 'finalSummary #TicketNoShow',
+			travelDetails : 'finalSummary #travelDetails',
+			fare : 'finalSummary #fare',
+			showDetails : 'showDetails',
+			myBookings : 'myBookings',
+			editBooking : 'editBooking',
+			dateSelectEdit : 'editBooking #dateSelectEdit',
+			ticketnumberEdit : 'editBooking #Ticketnumber',
+			ticketnumberPanel : 'editBooking #TicketnumberPanel',
+			editBooking : 'editBooking',
+			panelShow : 'editBooking #panelShow',
+			statusShow : 'editBooking #status',
+			ticketget : 'editBooking #ticketget',
+			fareAmount : 'editBooking #fareAmount',
+			names : 'editBooking #Names',
+			fromTo : 'editBooking #FromTo',
+			totalAmount : 'editBooking #TotalAmount',
+			points : 'editBooking #points',
+			refund : 'editBooking #refund',
 
-   },
-   onSearchKeyUp: function(searchField) {
+			panelShowC : 'cancelledView #panelShow',
+			statusShowC : 'cancelledView #status',
+			ticketgetC : 'cancelledView #ticketget',
+			fareAmountC : 'cancelledView #fareAmount',
+			namesC : 'cancelledView #Names',
+			fromToC : 'cancelledView #FromTo',
+			totalAmountC : 'cancelledView #TotalAmount',
+			pointsC : 'cancelledView #points',
+
+			statusColor : 'myBookings #statusColor',
+			cancelpopup : 'cancelpopup',
+			editScreen : 'editScreen',
+			dateSelectEdit : 'editScreen #dateSelect',
+			//onbpointCmd:'editScreen #onbpointCmd',
+			//ondpointCmd:'editScreen #ondpointCmd',
+			bpointEdit : 'editScreen #bpoint',
+			dpointEdit : 'editScreen #dpoint',
+			popupPanelText : 'cancelpopup #popupPanelText',
+			panelShowPopup : 'cancelpopup #panelShow',
+			ticketgetPopup : 'cancelpopup #ticketget',
+			ticketgetEditScreen : 'editScreen #ticketget',
+			panelShowEditScreen : 'editScreen #panelShow',
+			droppingpointedit : 'droppingpointedit',
+			boardingpointedit : 'boardingpointedit',
+			editDroppingPlaces : 'droppingpointedit #DroppingPlaces',
+			editBoardingPlaces : 'boardingpointedit #BoardingPlaces',
+			cancelledView : 'cancelledView',
+			changeseat : 'changeseat'
+		},
+		control : {
+			main : {
+				onmyBookingsCmd : 'myBookingsCmd'
+			},
+			myBookings : {
+				onmyBookingBackCmd : 'myBookingBackCmd',
+				onDisclosureCmd : 'DisclosureCmd',
+				onsearchBoxCmd : 'onSearchKeyUp'
+			},
+			editBooking : {
+				onEditBackButtonCmd : 'EditBackButtonCmd',
+				oncancelTicketBtnCmd : 'cancelTicketBtnCmd',
+				oneditTicketBtnCmd : 'editTicketBtnCmd'
+			},
+			cancelpopup : {
+				oncancelConfirmCmd : 'cancelConfirmCmd'
+			},
+			editScreen : {
+				onEditDetailsConfirmCmd : 'EditDetailsConfirmCmd',
+				onEditDetailsBackButtonCmd : 'EditDetailsBackButtonCmd',
+				onbpointCmd : 'bpointCmd',
+				ondpointCmd : 'dpointCmd'
+			},
+			boardingpointedit : {
+				onSaveBoardingEditCmd : 'SaveBoardingEditCmd'
+			},
+			droppingpointedit : {
+				onSaveDroppingEditCmd : 'SaveDroppingEditCmd'
+			},
+			cancelledView : {
+				onCancelledViewCmd : 'CancelledViewCmd'
+			}
+
+		}
+
+	},
+	onSearchKeyUp : function(searchField) {
 		var store = Ext.getStore("paymentDetails");
-  	    console.log("Searching");
-	    store.clearFilter();
-	    store.filterBy(function(record, id){
-	        var regex = new RegExp(searchField);
-	        return regex.test(record.get('TicketNo'));
-	    });
-	
-	    store.load();
-   },
-   CancelledViewCmd:function(){
-   		console.log('cancelled back button pressed');
-   		Ext.Viewport.animateActiveItem(this.getMyBookings(), this.slideRightTransition);
-   },
-   bpointCmd:function(){
+		console.log("Searching");
+		store.clearFilter();
+		store.filterBy(function(record, id) {
+			var regex = new RegExp(searchField);
+			return regex.test(record.get('TicketNo'));
+		});
+
+		store.load();
+	},
+	CancelledViewCmd : function() {
+		console.log('cancelled back button pressed');
+		Ext.Viewport.animateActiveItem(this.getMyBookings(), this.slideRightTransition);
+	},
+	bpointCmd : function() {
 		this.getBoardingpointedit().show();
-   },
-   dpointCmd:function(){
+	},
+	dpointCmd : function() {
 		this.getDroppingpointedit().show();
-   },
-   SaveBoardingEditCmd:function(){
-		var select=this.getEditBoardingPlaces().getSelection();
-	    this.getBpointEdit().setValue(select[0].raw.bPoint);
+	},
+	SaveBoardingEditCmd : function() {
+		var select = this.getEditBoardingPlaces().getSelection();
+		this.getBpointEdit().setValue(select[0].raw.bPoint);
 		this.getBoardingpointedit().hide();
-   },
-   SaveDroppingEditCmd:function(){
-  		var select=this.getEditDroppingPlaces().getSelection();
-        this.getDpointEdit().setValue(select[0].raw.dPoint);
+	},
+	SaveDroppingEditCmd : function() {
+		var select = this.getEditDroppingPlaces().getSelection();
+		this.getDpointEdit().setValue(select[0].raw.dPoint);
 		this.getDroppingpointedit().hide();
-   },
-   BpointsEditFiltered:function(record){
-   		console.log(record);
-   		console.log('bPoints received');
-   		//this.getEditBoardingPlaces().setData(record);
-   		var store=Ext.getStore('BpointList');
-   		//store.getProxy().dropTable();
-   		store.removeAll();
-   		store.sync();
-		var len=record.length;
-		for(var i=0;i<len;i++){
-		var rec={
-			bPoint:record[i].bPoint
-		};
-		
-		store.add(rec);
+	},
+	BpointsEditFiltered : function(record) {
+		console.log(record);
+		console.log('bPoints received');
+		//this.getEditBoardingPlaces().setData(record);
+		var store = Ext.getStore('BpointList');
+		//store.getProxy().dropTable();
+		store.removeAll();
+		store.sync();
+		var len = record.length;
+		for (var i = 0; i < len; i++) {
+			var rec = {
+				bPoint : record[i].bPoint
+			};
+
+			store.add(rec);
 		}
 		store.sync();
-		
-		
+
 		this.getEditBoardingPlaces().setStore('BpointList');
 	},
-   	DpointsEditFiltered:function(record){
-    		console.log(record);
-    		console.log('bPoints received');
-    		//var drecord= this.getEditDroppingPlaces();
-    		//drecord.removeAll();
-    		//drecord.sync();
-           //drecord.setData(record);
-           var store=Ext.getStore('DpointList');
-	   		//store.getProxy().dropTable();
-	   		store.removeAll();
-	   		store.sync();
-			var len=record.length;
-			for(var i=0;i<len;i++){
-			var rec={
-				dPoint:record[i].dPoint
+	DpointsEditFiltered : function(record) {
+		console.log(record);
+		console.log('bPoints received');
+		//var drecord= this.getEditDroppingPlaces();
+		//drecord.removeAll();
+		//drecord.sync();
+		//drecord.setData(record);
+		var store = Ext.getStore('DpointList');
+		//store.getProxy().dropTable();
+		store.removeAll();
+		store.sync();
+		var len = record.length;
+		for (var i = 0; i < len; i++) {
+			var rec = {
+				dPoint : record[i].dPoint
 			};
-			
+
 			store.add(rec);
-			}
-			store.sync();
-			
-			
-			this.getEditDroppingPlaces().setStore('DpointList');
-    	},
-   myBookingsCmd:function(){
-   		console.log('myBookingsCmd -in');
-   		
-   		//Ext.Viewport.animateActiveItem(this.getMain(),this.slideLeftTransition);
-   		Ext.Viewport.animateActiveItem(this.getMyBookings(), this.slideLeftTransition);
-   },
-   myBookingBackCmd:function(){
-   		console.log('myBookingBackCmd -in');
-   		Ext.Viewport.animateActiveItem(this.getMain(), this.slideRightTransition);
-   },
-   DisclosureCmd:function(record){
+		}
+		store.sync();
+
+		this.getEditDroppingPlaces().setStore('DpointList');
+	},
+	myBookingsCmd : function() {
+		console.log('myBookingsCmd -in');
+
+		//Ext.Viewport.animateActiveItem(this.getMain(),this.slideLeftTransition);
+		Ext.Viewport.animateActiveItem(this.getMyBookings(), this.slideLeftTransition);
+	},
+	myBookingBackCmd : function() {
+		console.log('myBookingBackCmd -in');
+		Ext.Viewport.animateActiveItem(this.getMain(), this.slideRightTransition);
+	},
+	DisclosureCmd : function(record) {
 		console.log('DisclosureCmd -in');
-		var TicketNo=record._data.TicketNo;
-		var Name=record._data.Name;
-		var TransId=record._data.TransId;
-		var fromPlace=record._data.fromPlace;
-		var toPlace=record._data.toPlace;
-		var date=record._data.date;
-		var BusService=record._data.BusService;
-		var seatNumbercount=record._data.seatNumbercount;
-		var seatNumbers=record._data.seatNumbers;
-		var bPoint=record._data.bPoint;
-		var dPoint=record._data.dPoint;
-		var Timing=record._data.Timing;
-		var status=record._data.status;
-		var amountPayable=record._data.amountPayable;
-		if(record._data.status =='cancelled')
-		{
+		var TicketNo = record._data.TicketNo;
+		var Name = record._data.Name;
+		var TransId = record._data.TransId;
+		var fromPlace = record._data.fromPlace;
+		var toPlace = record._data.toPlace;
+		var date = record._data.date;
+		var BusService = record._data.BusService;
+		var seatNumbercount = record._data.seatNumbercount;
+		var seatNumbers = record._data.seatNumbers;
+		var bPoint = record._data.bPoint;
+		var dPoint = record._data.dPoint;
+		var Timing = record._data.Timing;
+		var status = record._data.status;
+		var amountPayable = record._data.amountPayable;
+		if (record._data.status == 'cancelled') {
 			//Ext.Msg.alert("Ticked is already Cancelled");
 			//return;
 			//this.getEditBooking().removeAt(1);
-			this.getPanelShowC().setHtml('<p>Transaction Id <p>'+'<b>'+ TransId+'</b>'+'<p>Ticket Number</p>');
+			this.getPanelShowC().setHtml('<p>Transaction Id <p>' + '<b>' + TransId + '</b>' + '<p>Ticket Number</p>');
 			this.getTicketgetC().setHtml(TicketNo);
-			this.getStatusShowC().setHtml('Ticket status: '+status);
-			this.getPointsC().setHtml('<p>BoardingPoint: '+bPoint+'</p>'+'<p>DroppingPoint: '+dPoint+'</p>');
-			
-			this.getFromToC().setHtml('From Place: '+'<b>'+ fromPlace+'</b>'+'<p></p>'+'To Place: '+'<b>'+ toPlace+'</b>'+'<p></p>'+'Bus Service Name: '+'<b>'+ BusService+'</b>'+'<p></p>'+'Date: '+'<b>'+ date+' ' +Timing+'</b>');
-			this.getNamesC().setHtml('<p>Passenger Names</p>'+'<b>'+ Name+'</b>');
-			this.getFareAmountC().setHtml('<p>No.of Tickets Booked </p>'+'<b>'+seatNumbercount+'</b>'+'<p>Total Fare Amount</p>');
+			this.getStatusShowC().setHtml('Ticket status: ' + status);
+			this.getPointsC().setHtml('<p>BoardingPoint: ' + bPoint + '</p>' + '<p>DroppingPoint: ' + dPoint + '</p>');
+
+			this.getFromToC().setHtml('From Place: ' + '<b>' + fromPlace + '</b>' + '<p></p>' + 'To Place: ' + '<b>' + toPlace + '</b>' + '<p></p>' + 'Bus Service Name: ' + '<b>' + BusService + '</b>' + '<p></p>' + 'Date: ' + '<b>' + date + ' ' + Timing + '</b>');
+			this.getNamesC().setHtml('<p>Passenger Names</p>' + '<b>' + Name + '</b>');
+			this.getFareAmountC().setHtml('<p>No.of Tickets Booked </p>' + '<b>' + seatNumbercount + '</b>' + '<p>Total Fare Amount</p>');
 			this.getTotalAmountC().setHtml(amountPayable);
 			Ext.Viewport.animateActiveItem(this.getCancelledView(), this.slideLeftTransition);
 			return;
-			
+
 		}
 		/*var NewDate=record._data.date;
-		console.log(NewDate);
-		var updateDate=new Date(NewDate);
-		console.log(updateDate);*/
-		
-		this.getPanelShow().setHtml('<p>Transaction Id <p>'+'<b>'+ TransId+'</b>'+'<p>Ticket Number</p>');
+		 console.log(NewDate);
+		 var updateDate=new Date(NewDate);
+		 console.log(updateDate);*/
+
+		this.getPanelShow().setHtml('<p>Transaction Id <p>' + '<b>' + TransId + '</b>' + '<p>Ticket Number</p>');
 		this.getTicketget().setHtml(TicketNo);
-		this.getStatusShow().setHtml('Ticket status: '+status);
-		this.getPoints().setHtml('<p>BoardingPoint: '+bPoint+'</p>'+'<p>DroppingPoint: '+dPoint+'</p>');
+		this.getStatusShow().setHtml('Ticket status: ' + status);
+		this.getPoints().setHtml('<p>BoardingPoint: ' + bPoint + '</p>' + '<p>DroppingPoint: ' + dPoint + '</p>');
 		this.getPanelShowPopup().setHtml('<p><b>Ticket Number</b></p>');
 		this.getTicketgetPopup().setHtml(TicketNo);
-		this.getFromTo().setHtml('From Place: '+'<b>'+ fromPlace+'</b>'+'<p></p>'+'To Place: '+'<b>'+ toPlace+'</b>'+'<p></p>'+'Bus Service Name: '+'<b>'+ BusService+'</b>'+'<p></p>'+'Date: '+'<b>'+ date+' ' +Timing+'</b>');
-		this.getNames().setHtml('<p>Passenger Names</p>'+'<b>'+ Name+'</b>');
-		this.getFareAmount().setHtml('<p>No.of Tickets Booked </p>'+'<b>'+seatNumbercount+'</b>'+'<p>Total Fare Amount</p>');
+		this.getFromTo().setHtml('From Place: ' + '<b>' + fromPlace + '</b>' + '<p></p>' + 'To Place: ' + '<b>' + toPlace + '</b>' + '<p></p>' + 'Bus Service Name: ' + '<b>' + BusService + '</b>' + '<p></p>' + 'Date: ' + '<b>' + date + ' ' + Timing + '</b>');
+		this.getNames().setHtml('<p>Passenger Names</p>' + '<b>' + Name + '</b>');
+		this.getFareAmount().setHtml('<p>No.of Tickets Booked </p>' + '<b>' + seatNumbercount + '</b>' + '<p>Total Fare Amount</p>');
 		this.getTotalAmount().setHtml(amountPayable);
 		//this.getDateSelectEdit().setValue(updateDate);
 		//this.getTicketnumberEdit().setHtml(record._data.TicketNo);
-		var filter=Ext.create('myBooking.utilities.databaseFunctions');
-        		filter.dbFilter(fromPlace,toPlace);
+		var filter = Ext.create('myBooking.utilities.databaseFunctions');
+		filter.dbFilter(fromPlace, toPlace);
 		Ext.Viewport.animateActiveItem(this.getEditBooking(), this.slideLeftTransition);
 	},
-	EditBackButtonCmd:function(){
+	EditBackButtonCmd : function() {
 		console.log('DisclosureCmd -in');
 		Ext.Viewport.animateActiveItem(this.getMyBookings(), this.slideRightTransition);
 	},
-	AfterEditCmd:function(){
+	AfterEditCmd : function() {
 		console.log('DisclosureCmd -in');
-		
-		
+
 		//Update the record
 		//Get the store
 		var store = Ext.getStore('paymentDetails');
-		
+
 		//Get the record
 		var index = store.findExact('TicketNo', this.getTicketnumberEdit()._html);
 		console.log(index);
 		var record = store.getAt(index);
 		console.log(record);
 		//Update the field value
-		if(record != null)
-		{
+		if (record != null) {
 			record.set('date', this.getDateSelectEdit()._component._value);
 			store.sync();
 			console.log("Record Updated");
-		}		
-		
-		
+		}
+
 		Ext.Viewport.animateActiveItem(this.getMain(), this.slideLeftTransition);
 	},
-	cancelConfirmCmd:function(){
+	cancelConfirmCmd : function() {
 		console.log('cancelConfirmCmd -in');
-		var ticket=this.getTicketgetPopup()._html;
+		var ticket = this.getTicketgetPopup()._html;
 		//Update the record
 		//Get the store
 		var store = Ext.getStore('paymentDetails');
@@ -293,52 +286,48 @@ Ext.define('myBooking.controller.myBookings',{
 		var record = store.getAt(index);
 		console.log(record);
 		//Update the field value
-		if(record != null)
-		{
+		if (record != null) {
 			record.set('status', 'cancelled');
 			store.sync();
 			console.log("Record Updated");
 		}
 
-			Ext.Msg.alert('Ticked Cancelled');
-			//me.getTicketNumber().setValue('');
+		Ext.Msg.alert('Ticked Cancelled');
+		//me.getTicketNumber().setValue('');
 		//this.getEditBooking().removeAt(1);
 		this.getCancelpopup().hide();
-		
-		
+
 		Ext.Viewport.animateActiveItem(this.getMain(), this.slideLeftTransition);
 
-
 	},
-	cancelTicketBtnCmd:function(){
+	cancelTicketBtnCmd : function() {
 		console.log('cancelTicketBtnCmd -in');
-		var ticket=this.getTicketget()._html;
+		var ticket = this.getTicketget()._html;
 		var store = Ext.getStore('paymentDetails');
 		var index = store.findExact('TicketNo', ticket);
 		console.log(index);
 		var record = store.getAt(index);
 		console.log(record);
-		if(record._data.status =='cancelled')
-		{
+		if (record._data.status == 'cancelled') {
 			Ext.Msg.alert("Ticked is already Cancelled");
 			return;
 		}
 
-			var totalAmpountPayable=this.getTotalAmount()._html;
-            var refund1=parseInt(totalAmpountPayable);
-            console.log(refund1);
-            var refund=(refund1*0.1);
-            console.log(refund);
-            refund=Math.ceil(refund1-refund);
-            console.log(refund);
-			this.getPopupPanelText().setHtml('<p>10% of the Fare will be deducted as the penality charges and the refundable amount of <b>Rs.'+refund+'</b> will be credited into your account in 2-3 Working days</p>');
+		var totalAmpountPayable = this.getTotalAmount()._html;
+		var refund1 = parseInt(totalAmpountPayable);
+		console.log(refund1);
+		var refund = (refund1 * 0.1);
+		console.log(refund);
+		refund = Math.ceil(refund1 - refund);
+		console.log(refund);
+		this.getPopupPanelText().setHtml('<p>10% of the Fare will be deducted as the penality charges and the refundable amount of <b>Rs.' + refund + '</b> will be credited into your account in 2-3 Working days</p>');
 		this.getCancelpopup().show();
 	},
-	EditDetailsBackButtonCmd:function(){
+	EditDetailsBackButtonCmd : function() {
 		console.log('EditDetailsBackButtonCmd -in');
 		Ext.Viewport.animateActiveItem(this.getEditBooking(), this.slideRightTransition);
 	},
-	EditDetailsConfirmCmd:function(){
+	EditDetailsConfirmCmd : function() {
 		console.log('EditDetailsConfirmCmd -in');
 		//Update the record
 		//Get the store
@@ -346,13 +335,12 @@ Ext.define('myBooking.controller.myBookings',{
 		var store = Ext.getStore('paymentDetails');
 
 		//Get the record
-		var index = store.findExact('TicketNo', this.getTicketgetEditScreen()._html );
+		var index = store.findExact('TicketNo', this.getTicketgetEditScreen()._html);
 		console.log(index);
 		var record = store.getAt(index);
 		console.log(record);
 		//Update the field value
-		if(record != null)
-		{
+		if (record != null) {
 			record.set('date', this.getDateSelectEdit()._component._value);
 			record.set('bPoint', this.getBpointEdit()._component._value);
 			record.set('dPoint', this.getDpointEdit()._component._value);
@@ -360,63 +348,62 @@ Ext.define('myBooking.controller.myBookings',{
 			store.sync();
 			console.log("Record Updated");
 		}
-		
 
 		Ext.Viewport.animateActiveItem(this.getMain(), this.slideLeftTransition);
 	},
-	editTicketBtnCmd:function(){
+	editTicketBtnCmd : function() {
 		console.log('editTicketBtnCmd -in');
-		var ticket=this.getTicketget()._html;
+		var ticket = this.getTicketget()._html;
 		this.getPanelShowEditScreen().setHtml('<p>Ticket Number</p>');
-        this.getTicketgetEditScreen().setHtml(ticket);
+		this.getTicketgetEditScreen().setHtml(ticket);
 		var store = Ext.getStore('paymentDetails');
 		var index = store.findExact('TicketNo', ticket);
 		console.log(index);
 		var record = store.getAt(index);
 		console.log(record);
-		if(record._data.status =='cancelled')
-		{
+		if (record._data.status == 'cancelled') {
 			Ext.Msg.alert("Ticked Can't be Edited");
 			return;
 		}
-		var date=record._data.date;
-		var dateFormat=new Date(date);
-		var bPoint=record._data.bPoint;
-		var dPoint=record._data.dPoint;
+		var date = record._data.date;
+		var dateFormat = new Date(date);
+		var bPoint = record._data.bPoint;
+		var dPoint = record._data.dPoint;
 		this.getDateSelectEdit().setValue(dateFormat);
 		this.getBpointEdit().setValue(bPoint);
 		this.getDpointEdit().setValue(dPoint);
-		
-		var storeEdit=Ext.getStore('paymentDetails');
-      	var indexEdit=storeEdit.findExact('TicketNo',this.getTicketgetEditScreen()._html);
-      	var recordEdit=store.getAt(indexEdit);
-      	var count=record._data.seatNumbercount;
-      	
-      	console.log(count);
-      	
-		var seats=new Array(1,3,4,7,10,20,22,26,28,30,34);      			
-		for(var i=0;i<seats.length;i++){
-			var changeColor=seats[i];
-			this.getChangeseat().down('#'+changeColor).setUi('action');
-			this.getChangeseat().down('#'+changeColor).setText('A');
-		}
-		var seats=new Array(2,8,14,21,25,24,27,31,33);      			
-		for(var i=0;i<seats.length;i++){
-			var changeColor=seats[i];
-			this.getChangeseat().down('#'+changeColor).setUi('decline');
-			this.getChangeseat().down('#'+changeColor).setText('B');
-		}
 
+		var storeEdit = Ext.getStore('paymentDetails');
+		var indexEdit = storeEdit.findExact('TicketNo', this.getTicketgetEditScreen()._html);
+		var recordEdit = store.getAt(indexEdit);
+		var count = record._data.seatNumbercount;
 
+		console.log(count);
+
+		var seats = new Array(1, 3, 4, 7, 10, 20, 22, 26, 28, 30, 34);
+		for (var i = 0; i < seats.length; i++) {
+			var changeColor = seats[i];
+			this.getChangeseat().down('#' + changeColor).setUi('action');
+			this.getChangeseat().down('#' + changeColor).setText('A');
+		}
+		var seats = new Array(2, 8, 14, 21, 25, 24, 27, 31, 33);
+		for (var i = 0; i < seats.length; i++) {
+			var changeColor = seats[i];
+			this.getChangeseat().down('#' + changeColor).setUi('decline');
+			this.getChangeseat().down('#' + changeColor).setText('B');
+		}
 
 		Ext.Viewport.animateActiveItem(this.getEditScreen(), this.slideLeftTransition);
 	},
-	
 
-
-
-//to slide the screen left
-slideLeftTransition: { type: 'slide', direction: 'left' },
-//to slide  the screen right
-slideRightTransition: { type: 'slide', direction: 'right' }
+	//to slide the screen left
+	slideLeftTransition : {
+		type : 'slide',
+		direction : 'left'
+	},
+	//to slide  the screen right
+	slideRightTransition : {
+		type : 'slide',
+		direction : 'right'
+	}
 });

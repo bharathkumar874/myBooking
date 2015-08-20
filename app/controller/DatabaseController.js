@@ -1,8 +1,8 @@
 Ext.define("myBooking.controller.DatabaseController", {
-	extend: 'Ext.app.Controller',
+	extend : 'Ext.app.Controller',
 	//requires:['Ext.data.proxy.Sql'],
-	launch: function(){
-	console.log("myStore Created");
+	launch : function() {
+		console.log("myStore Created");
 
 		//Ext.getStore("BusStore").sync();
 		//Ext.getStore('places').sync();
@@ -18,4 +18,4 @@ Ext.define("myBooking.controller.DatabaseController", {
 		Ext.getStore('DPoint').sync();
 
 	}
-});
+}); 
