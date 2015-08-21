@@ -2211,48 +2211,67 @@ Ext.ClassManager.addNameAlternateMappings({
   "myBooking.controller.Booking": [],
   "myBooking.controller.Buses": [],
   "myBooking.controller.CancelTicket": [],
+  "myBooking.controller.ChangeSeat": [],
   "myBooking.controller.DatabaseController": [],
+  "myBooking.controller.EditPayment": [],
   "myBooking.controller.From": [],
   "myBooking.controller.PassengerDetails": [],
   "myBooking.controller.PaymentDetails": [],
-  "myBooking.controller.Seats": [],
+  "myBooking.controller.StringFile": [],
   "myBooking.controller.To": [],
   "myBooking.controller.confirmSummary": [],
   "myBooking.controller.databaseFunctions": [],
+  "myBooking.controller.emailMobile": [],
   "myBooking.controller.finalSummary": [],
   "myBooking.controller.myBookings": [],
+  "myBooking.controller.panel": [],
+  "myBooking.controller.seatEdit": [],
   "myBooking.controller.seatSelect": [],
   "myBooking.model.BoardingPoint": [],
   "myBooking.model.Booking": [],
+  "myBooking.model.BpointList": [],
   "myBooking.model.BusList": [],
+  "myBooking.model.BusesAvailableList": [],
   "myBooking.model.CurrentSeats": [],
+  "myBooking.model.DpointList": [],
   "myBooking.model.DroppingPoint": [],
   "myBooking.model.From": [],
   "myBooking.model.PassengerDetails": [],
   "myBooking.model.PaymentDetails": [],
+  "myBooking.model.emailMobile": [],
   "myBooking.model.panel": [],
   "myBooking.model.places": [],
   "myBooking.model.seatNumber": [],
+  "myBooking.model.ticketChangeStatus": [],
   "myBooking.store.BoardingPoint": [],
+  "myBooking.store.BpointList": [],
   "myBooking.store.BusList": [],
+  "myBooking.store.BusesAvailableList": [],
   "myBooking.store.CurrentSeats": [],
+  "myBooking.store.DpointList": [],
   "myBooking.store.DroppingPoint": [],
   "myBooking.store.From": [],
   "myBooking.store.PassengerDetails": [],
   "myBooking.store.PaymentDetails": [],
+  "myBooking.store.emailMobile": [],
   "myBooking.store.panel": [],
   "myBooking.store.places": [],
   "myBooking.store.seatNumber": [],
+  "myBooking.store.ticketChangeStatus": [],
+  "myBooking.utilities.StringFile": [],
   "myBooking.utilities.databaseFunctions": [],
   "myBooking.view.BoardingPoint": [],
   "myBooking.view.BoardingPointEdit": [],
   "myBooking.view.Booking": [],
   "myBooking.view.Buses": [],
   "myBooking.view.CancelTicket": [],
+  "myBooking.view.CancelledView": [],
+  "myBooking.view.ChangeSeat": [],
   "myBooking.view.ConfirmYourBooking": [],
   "myBooking.view.DroppingPoint": [],
   "myBooking.view.DroppingPointEdit": [],
   "myBooking.view.EditBooking": [],
+  "myBooking.view.EditPayment": [],
   "myBooking.view.EditScreen": [],
   "myBooking.view.From": [],
   "myBooking.view.Main": [],
@@ -2263,6 +2282,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "myBooking.view.TotalPassengerfields": [],
   "myBooking.view.cancelPopup": [],
   "myBooking.view.cancelSummary": [],
+  "myBooking.view.emailMobile": [],
   "myBooking.view.finalSummary": [],
   "myBooking.view.formfield": [],
   "myBooking.view.myBookings": [],
@@ -2990,26 +3010,40 @@ Ext.ClassManager.addNameAliasMappings({
   "myBooking.controller.Booking": [],
   "myBooking.controller.Buses": [],
   "myBooking.controller.CancelTicket": [],
+  "myBooking.controller.ChangeSeat": [],
   "myBooking.controller.DatabaseController": [],
+  "myBooking.controller.EditPayment": [],
   "myBooking.controller.From": [],
   "myBooking.controller.PassengerDetails": [],
   "myBooking.controller.PaymentDetails": [],
-  "myBooking.controller.Seats": [],
+  "myBooking.controller.StringFile": [],
   "myBooking.controller.To": [],
   "myBooking.controller.confirmSummary": [],
   "myBooking.controller.databaseFunctions": [],
+  "myBooking.controller.emailMobile": [],
   "myBooking.controller.finalSummary": [],
   "myBooking.controller.myBookings": [],
+  "myBooking.controller.panel": [],
+  "myBooking.controller.seatEdit": [],
   "myBooking.controller.seatSelect": [],
   "myBooking.model.BoardingPoint": [
     "widget.BpointModel"
   ],
   "myBooking.model.Booking": [],
+  "myBooking.model.BpointList": [
+    "widget.BpointList"
+  ],
   "myBooking.model.BusList": [
     "widget.BusModel"
   ],
+  "myBooking.model.BusesAvailableList": [
+    "widget.BusesAvailableList"
+  ],
   "myBooking.model.CurrentSeats": [
     "widget.currentSeatsModel"
+  ],
+  "myBooking.model.DpointList": [
+    "widget.DpointList"
   ],
   "myBooking.model.DroppingPoint": [
     "widget.DpointModel"
@@ -3023,6 +3057,9 @@ Ext.ClassManager.addNameAliasMappings({
   "myBooking.model.PaymentDetails": [
     "widget.paymentDetails"
   ],
+  "myBooking.model.emailMobile": [
+    "widget.emailMobile"
+  ],
   "myBooking.model.panel": [
     "widget.panelPassengers"
   ],
@@ -3032,16 +3069,25 @@ Ext.ClassManager.addNameAliasMappings({
   "myBooking.model.seatNumber": [
     "widget.seatNumberModel"
   ],
+  "myBooking.model.ticketChangeStatus": [
+    "widget.ticketChangeStatus"
+  ],
   "myBooking.store.BoardingPoint": [],
+  "myBooking.store.BpointList": [],
   "myBooking.store.BusList": [],
+  "myBooking.store.BusesAvailableList": [],
   "myBooking.store.CurrentSeats": [],
+  "myBooking.store.DpointList": [],
   "myBooking.store.DroppingPoint": [],
   "myBooking.store.From": [],
   "myBooking.store.PassengerDetails": [],
   "myBooking.store.PaymentDetails": [],
+  "myBooking.store.emailMobile": [],
   "myBooking.store.panel": [],
   "myBooking.store.places": [],
   "myBooking.store.seatNumber": [],
+  "myBooking.store.ticketChangeStatus": [],
+  "myBooking.utilities.StringFile": [],
   "myBooking.utilities.databaseFunctions": [],
   "myBooking.view.BoardingPoint": [
     "widget.boardingpoint"
@@ -3058,6 +3104,12 @@ Ext.ClassManager.addNameAliasMappings({
   "myBooking.view.CancelTicket": [
     "widget.CancelTicket"
   ],
+  "myBooking.view.CancelledView": [
+    "widget.cancelledView"
+  ],
+  "myBooking.view.ChangeSeat": [
+    "widget.changeseat"
+  ],
   "myBooking.view.ConfirmYourBooking": [
     "widget.confirmyourbooking"
   ],
@@ -3069,6 +3121,9 @@ Ext.ClassManager.addNameAliasMappings({
   ],
   "myBooking.view.EditBooking": [
     "widget.editBooking"
+  ],
+  "myBooking.view.EditPayment": [
+    "widget.editpayment"
   ],
   "myBooking.view.EditScreen": [
     "widget.editScreen"
@@ -3099,6 +3154,9 @@ Ext.ClassManager.addNameAliasMappings({
   ],
   "myBooking.view.cancelSummary": [
     "widget.cancelSummary"
+  ],
+  "myBooking.view.emailMobile": [
+    "widget.emailMobile"
   ],
   "myBooking.view.finalSummary": [
     "widget.finalSummary"

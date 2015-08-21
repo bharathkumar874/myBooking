@@ -14,11 +14,11 @@ Ext.application({
 	name : 'myBooking',
 
 	requires : ['Ext.MessageBox'],
-	controllers : ['Booking', 'Buses', 'seatEdit', 'To', 'From', 'seatSelect', 'DatabaseController', 'BoardingPoint', 'databaseFunctions', 'PassengerDetails', 'confirmSummary', 'PaymentDetails', 'finalSummary', 'CancelTicket', 'myBookings', 'ChangeSeat'],
-	stores : ['BusList', 'places', 'BoardingPoint', 'DroppingPoint', 'seatNumber', 'PassengerDetails', 'PaymentDetails', 'CurrentSeats', 'panel', 'BpointList', 'DpointList', 'BusesAvailableList'],
-	models : ['BusList', 'places', 'BoardingPoint', 'DroppingPoint', 'Booking', 'seatNumber', 'PassengerDetails', 'PaymentDetails', 'CurrentSeats', 'panel', 'BpointList', 'DpointList', 'BusesAvailableList'],
-
-	views : ['Main', 'Booking', 'Buses', 'SelectSeat', 'To', 'From', 'BoardingPoint', 'DroppingPoint', 'PassengerDetails', 'ConfirmYourBooking', 'PaymentDetails', 'finalSummary', 'TotalPassengerfields', 'formfield', 'showDetails', 'panelShowDetails', 'panelSummary', 'CancelTicket', 'cancelSummary', 'myBookings', 'EditBooking', 'cancelPopup', 'EditScreen', 'BoardingPointEdit', 'DroppingPointEdit', 'CancelledView', 'ChangeSeat'],
+	controllers : ['Booking', 'Buses', 'seatEdit', 'To', 'From', 'seatSelect', 'DatabaseController', 'BoardingPoint', 'databaseFunctions', 'PassengerDetails', 'confirmSummary', 'PaymentDetails', 'finalSummary', 'CancelTicket', 'myBookings', 'ChangeSeat','StringFile','EditPayment','emailMobile'],
+	stores : ['BusList', 'places', 'BoardingPoint', 'DroppingPoint', 'seatNumber', 'PassengerDetails', 'PaymentDetails', 'CurrentSeats', 'panel', 'BpointList', 'DpointList', 'BusesAvailableList','ticketChangeStatus','emailMobile'],
+	models : ['BusList', 'places', 'BoardingPoint', 'DroppingPoint', 'Booking', 'seatNumber', 'PassengerDetails', 'PaymentDetails', 'CurrentSeats', 'panel', 'BpointList', 'DpointList', 'BusesAvailableList','ticketChangeStatus','emailMobile'],
+	
+	views : ['Main', 'Booking', 'Buses', 'SelectSeat', 'To', 'From', 'BoardingPoint', 'DroppingPoint', 'PassengerDetails', 'ConfirmYourBooking', 'PaymentDetails', 'finalSummary', 'TotalPassengerfields', 'formfield', 'showDetails', 'panelShowDetails', 'panelSummary', 'CancelTicket', 'cancelSummary', 'myBookings', 'EditBooking', 'cancelPopup', 'EditScreen', 'BoardingPointEdit', 'DroppingPointEdit', 'CancelledView', 'ChangeSeat','EditPayment','emailMobile'],
 
 	icon : {
 		'57' : 'resources/icons/Icon.png',
@@ -67,9 +67,10 @@ Ext.application({
 		var DroppingPointEdit = Ext.create('myBooking.view.DroppingPointEdit');
 		var CancelledView = Ext.create('myBooking.view.CancelledView');
 		var ChangeSeat = Ext.create('myBooking.view.ChangeSeat');
-
+		var EditPayment = Ext.create('myBooking.view.EditPayment');
+		var emailMobile=Ext.create('myBooking.view.emailMobile');
 		// Initialize the main view
-		Ext.Viewport.add(Ext.create('myBooking.view.Main'), Booking, From, To, Buses, Seats, PassengerDetails, PaymentDetails, finalSummary, TotalPassengerfields, formfield, showDetails, panelShowDetails, panelSummary, CancelTicket, cancelSummary, myBookings, EditBooking, cancelPopup, EditScreen, BoardingPointEdit, DroppingPointEdit, CancelledView, ChangeSeat);
+		Ext.Viewport.add(Ext.create('myBooking.view.Main'), Booking, From, To, Buses, Seats, PassengerDetails, PaymentDetails, finalSummary, TotalPassengerfields, formfield, showDetails, panelShowDetails, panelSummary, CancelTicket, cancelSummary, myBookings, EditBooking, cancelPopup, EditScreen, BoardingPointEdit, DroppingPointEdit, CancelledView, ChangeSeat,EditPayment,emailMobile);
 	},
 
 	onUpdated : function() {

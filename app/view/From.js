@@ -7,9 +7,10 @@ Ext.define('myBooking.view.From', {
 		centered : true,
 		autoCreate : true,
 		modal : true,
-		height : '80%',
+		height : '75%',
 		layout : 'vbox',
-		width : '75%',
+		width : '68%',
+		cls:'noborder',
 		showAnimation : {
 			type : 'slide',
 			direction : 'left'
@@ -22,6 +23,7 @@ Ext.define('myBooking.view.From', {
 			action : 'hide',
 			text : 'Close',
 			ui : 'action',
+			cls:'closeclass',
 			docked : 'bottom',
 			itemId : 'Fromhide'
 		}, {
@@ -32,11 +34,13 @@ Ext.define('myBooking.view.From', {
 			items : [{
 				xtype : 'titlebar',
 				title : 'From Place',
+				cls : 'mainTitle',
 				docked : 'top',
 				flex : 1,
 				items : [{
 					xtype : 'button',
 					text : 'Save',
+					cls : 'buttonTop',
 					itemId : 'FromSave',
 
 				}]
@@ -47,6 +51,7 @@ Ext.define('myBooking.view.From', {
 				itemTpl : '{place}',
 				itemId : 'fromPlace',
 				scrollable : true,
+				cls:'selectList',
 				store : 'places'
 			}]
 

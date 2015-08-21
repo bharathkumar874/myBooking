@@ -17,7 +17,10 @@ Ext.define('myBooking.controller.Booking', {
 			dateSelect : 'booking #dateSelect',
 			fromPlace : 'booking #FromPlaces',
 			toPlace : 'booking #popup',
-			returnDate : 'booking #returnDate'
+			returnDate : 'booking #returnDate',
+			boardingSelect : 'boardingpoint #BoardingPlaces',
+			droppingSelect : 'droppingpoint #DroppingPlaces',
+			
 		},
 		control : {
 			main : {
@@ -34,6 +37,13 @@ Ext.define('myBooking.controller.Booking', {
 	//go to booking view when clicked on book ticket in Home screen
 	onBookTicketCommand : function() {
 		console.log("book Ticket pressed -in");
+	/*	var options = {title: 'Booking a Ticket', message: 'You just booked a ticket', seconds: 5};
+		window.localNotification.add(10, options, function(){
+			console.log("Notification set");
+			},
+			 function(){
+			 	console.log("Error setting the Notification");
+			 	});*/
 		Ext.Viewport.animateActiveItem(this.getBooking(), this.slideLeftTransition);
 		//			Ext.Viewport.animateActiveItem(this.getSeats(), this.slideLeftTransition);
 

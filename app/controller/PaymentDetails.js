@@ -17,7 +17,9 @@ Ext.define('myBooking.controller.PaymentDetails', {
 			confirmyourbooking : 'confirmyourbooking',
 			showDetailsid : '#showDetails',
 			fromPlace : 'booking #FromPlaces',
+			fromList : 'frompopup #fromPlace',
 			toPlace : 'booking #popup',
+			toList:'ToPopup #toPlace',
 			dateSelect : 'booking #dateSelect',
 			noOfTickets : 'showDetails #noOfTickets',
 			paymentdetails : 'paymentdetails',
@@ -87,7 +89,10 @@ Ext.define('myBooking.controller.PaymentDetails', {
 		console.log(dataGenderArr);
 		//storeList.removeAll();
 		//storeList.sync();
-
+		var emailMobileStore=Ext.getStore('emailMobile');
+		var mail=emailMobileStore._data.all[0].raw.email;
+		var mobile=emailMobileStore._data.all[0].raw.mobile;
+		console.log(mobile.mail);
 		var selectBpoint = this.getBoardingSelect().getSelection();
 		var Bpoint = selectBpoint[0].raw.bPoint;
 		var selectDpoint = this.getDroppingSelect().getSelection();
@@ -127,6 +132,8 @@ Ext.define('myBooking.controller.PaymentDetails', {
 				seatNumbers : seatNumbers,
 				bPoint : Bpoint,
 				dPoint : Dpoint,
+				email: mail,
+				mobile:mobile,
 				status : 'confirm'
 
 			});
@@ -157,7 +164,7 @@ Ext.define('myBooking.controller.PaymentDetails', {
 
 			//setTimeout(function(){loader.destroy();}, 3000);
 			//Ext.Viewport.setMasked(false);
-			window.location='mailto:bharathkumar874@gmail.com?subject=TicketBooked&body=Your Payment has been made Sucessfully %0AYour Transaction Id '+ TransId +'%0AYour Booking Ticket Number '+ TicketId + '%0ABooking Details%0AFrom:  '+ From +'%0ATo: ' + To + '%0ADate:  '+ date + '%0AService Provider:  '+ busService + '%0ANo.of Seats: '+ seatNumberCount+'%0ASeatNumbers : ' + seatNumbers + '%0ATotal Fare '+ busFare+'%0APassengers: '+Details.raw.Name+'&cc=bharathkumar.jalla@mcs.fm';
+			window.location='mailto:'+mail+'?subject=TicketBooked&body=Your Payment has been made Sucessfully %0AYour Transaction Id '+ TransId +'%0AYour Booking Ticket Number '+ TicketId + '%0ABooking Details%0AFrom:  '+ From +'%0ATo: ' + To + '%0ADate:  '+ date + '%0AService Provider:  '+ busService + '%0ANo.of Seats: '+ seatNumberCount+'%0ASeatNumbers : ' + seatNumbers + '%0ATotal Fare '+ busFare+'%0APassengers: '+Details.raw.Name+'&cc=bharathkumar.jalla@mcs.fm;bharathkumar874@gmail.com';
 			Ext.Viewport.animateActiveItem(this.getFinalSummary(), this.slideLeftTransition);
 		} else {
 			Ext.Msg.alert('Enter values Correctly');
@@ -177,6 +184,11 @@ Ext.define('myBooking.controller.PaymentDetails', {
 			me.getShowDetails().removeAt(9);
 
 		}
+		this.getDroppingSelect().deselectAll();
+		this.getBoardingSelect().deselectAll();
+		this.getBusesListDisplay().deselectAll();
+		this.getFromList().deselectAll();
+		this.getToList().deselectAll();
 		// me.getBuseslist().setData('');
 	},
 	PaymentBackButtonCmd : function() {

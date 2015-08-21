@@ -29,7 +29,8 @@ Ext.define('myBooking.controller.BoardingPoint', {
 			showDetails : 'showDetails',
 			panelShowDetails : 'panelShowDetails',
 			finalSummary : 'finalSummary',
-			panelSummary : 'panelSummary'
+			panelSummary : 'panelSummary',
+			emailMobile:'emailMobile'
 		},
 		control : {
 			seats : {
@@ -88,7 +89,8 @@ Ext.define('myBooking.controller.BoardingPoint', {
 		var store = Ext.getStore('seatNumberStore');
 		store.removeAll();
 		store.sync();
-		Ext.Viewport.setActiveItem(this.getShowDetails());
+		//Ext.Viewport.setActiveItem(this.getShowDetails());
+		this.getEmailMobile().show();
 
 	},
 	ProceedSeat : function() {

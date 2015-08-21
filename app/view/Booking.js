@@ -24,7 +24,7 @@ Ext.define('myBooking.view.Booking', {
 			}]
 		}, {
 			xtype : 'panel',
-			html : '<img style="height: 125px; width: 125px; margin-left:33%" src="http://png-3.findicons.com/files/icons/978/cem_transport/128/travel_bus.png" />'
+			cls:'busImage'
 		}, {
 			xtype : 'fieldset',
 			title : 'Booking',

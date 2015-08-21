@@ -60,9 +60,13 @@ Ext.define("myBooking.model.PaymentDetails", {
 		}, {
 			name : 'Age',
 			type : 'int'
+		}, {
+			name : 'email',
+			type : 'string'
+		}, {
+			name : 'mobile',
+			type : 'int'
 		},
-		//{name:'email',type:'string'},
-		//{name:'mobile',type:'int'},
 		//{name:'emergency',type:'int'},
 		{
 			name : 'seatNumbercount',
@@ -81,4 +85,4 @@ Ext.define("myBooking.model.PaymentDetails", {
 			type : 'string'
 		}]
 	}
-}); 
+});

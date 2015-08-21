@@ -92,7 +92,7 @@ Ext.define('myBooking.controller.myBookings', {
 				oncancelConfirmCmd : 'cancelConfirmCmd'
 			},
 			editScreen : {
-				onEditDetailsConfirmCmd : 'EditDetailsConfirmCmd',
+				//onEditDetailsConfirmCmd : 'EditDetailsConfirmCmd',
 				onEditDetailsBackButtonCmd : 'EditDetailsBackButtonCmd',
 				onbpointCmd : 'bpointCmd',
 				ondpointCmd : 'dpointCmd'
@@ -327,31 +327,7 @@ Ext.define('myBooking.controller.myBookings', {
 		console.log('EditDetailsBackButtonCmd -in');
 		Ext.Viewport.animateActiveItem(this.getEditBooking(), this.slideRightTransition);
 	},
-	EditDetailsConfirmCmd : function() {
-		console.log('EditDetailsConfirmCmd -in');
-		//Update the record
-		//Get the store
-
-		var store = Ext.getStore('paymentDetails');
-
-		//Get the record
-		var index = store.findExact('TicketNo', this.getTicketgetEditScreen()._html);
-		console.log(index);
-		var record = store.getAt(index);
-		console.log(record);
-		//Update the field value
-		if (record != null) {
-			record.set('date', this.getDateSelectEdit()._component._value);
-			record.set('bPoint', this.getBpointEdit()._component._value);
-			record.set('dPoint', this.getDpointEdit()._component._value);
-
-			store.sync();
-			console.log("Record Updated");
-		}
-
-		Ext.Viewport.animateActiveItem(this.getMain(), this.slideLeftTransition);
-	},
-	editTicketBtnCmd : function() {
+		editTicketBtnCmd : function() {
 		console.log('editTicketBtnCmd -in');
 		var ticket = this.getTicketget()._html;
 		this.getPanelShowEditScreen().setHtml('<p>Ticket Number</p>');
@@ -392,6 +368,15 @@ Ext.define('myBooking.controller.myBookings', {
 			this.getChangeseat().down('#' + changeColor).setUi('decline');
 			this.getChangeseat().down('#' + changeColor).setText('B');
 		}
+		var statusStore= Ext.getStore('ticketChangeStatus');
+		statusStore.removeAll();
+		statusStore.sync();	
+		console.log('statusStore cleared');
+		
+		Status={status:""+true};	
+		statusStore.add(Status);
+		statusStore.sync();	
+		console.log('statusStore added with true');
 
 		Ext.Viewport.animateActiveItem(this.getEditScreen(), this.slideLeftTransition);
 	},

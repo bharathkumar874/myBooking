@@ -21,6 +21,7 @@ Ext.Loader.addClassPathMappings({
   "Ext.Element-static": "touch/src/dom/Element.static.js",
   "Ext.Element-style": "touch/src/dom/Element.style.js",
   "Ext.Element-traversal": "touch/src/dom/Element.traversal.js",
+  "Ext.cmd": "../../../C:/Users/bkj/bin/Sencha/Cmd/6.0.0.202/plugins/src",
   "Ext.core.DomQuery": "touch/src/dom/Query.js",
   "Ext.device.Purchases.Product": "touch/src/device/purchases/Sencha.js",
   "Ext.device.filesystem.DirectoryEntry": "touch/src/device/filesystem/Sencha.js",
@@ -532,17 +533,6 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.layout.wrapper.BoxDock": [],
   "Ext.layout.wrapper.Dock": [],
   "Ext.layout.wrapper.Inner": [],
-  "Ext.log.Base": [],
-  "Ext.log.Logger": [],
-  "Ext.log.filter.Filter": [],
-  "Ext.log.filter.Priority": [],
-  "Ext.log.formatter.Default": [],
-  "Ext.log.formatter.Formatter": [],
-  "Ext.log.formatter.Identity": [],
-  "Ext.log.writer.Console": [],
-  "Ext.log.writer.DocumentTitle": [],
-  "Ext.log.writer.Remote": [],
-  "Ext.log.writer.Writer": [],
   "Ext.mixin.Bindable": [],
   "Ext.mixin.Filterable": [],
   "Ext.mixin.Mixin": [],
@@ -668,7 +658,88 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.viewport.WindowsPhone": [
     "Ext.viewport.WP"
   ],
-  "myBooking.view.Main": []
+  "myBooking.controller.BoardingPoint": [],
+  "myBooking.controller.Booking": [],
+  "myBooking.controller.Buses": [],
+  "myBooking.controller.CancelTicket": [],
+  "myBooking.controller.ChangeSeat": [],
+  "myBooking.controller.DatabaseController": [],
+  "myBooking.controller.EditPayment": [],
+  "myBooking.controller.From": [],
+  "myBooking.controller.PassengerDetails": [],
+  "myBooking.controller.PaymentDetails": [],
+  "myBooking.controller.StringFile": [],
+  "myBooking.controller.To": [],
+  "myBooking.controller.confirmSummary": [],
+  "myBooking.controller.databaseFunctions": [],
+  "myBooking.controller.emailMobile": [],
+  "myBooking.controller.finalSummary": [],
+  "myBooking.controller.myBookings": [],
+  "myBooking.controller.panel": [],
+  "myBooking.controller.seatEdit": [],
+  "myBooking.controller.seatSelect": [],
+  "myBooking.model.BoardingPoint": [],
+  "myBooking.model.Booking": [],
+  "myBooking.model.BpointList": [],
+  "myBooking.model.BusList": [],
+  "myBooking.model.BusesAvailableList": [],
+  "myBooking.model.CurrentSeats": [],
+  "myBooking.model.DpointList": [],
+  "myBooking.model.DroppingPoint": [],
+  "myBooking.model.From": [],
+  "myBooking.model.PassengerDetails": [],
+  "myBooking.model.PaymentDetails": [],
+  "myBooking.model.emailMobile": [],
+  "myBooking.model.panel": [],
+  "myBooking.model.places": [],
+  "myBooking.model.seatNumber": [],
+  "myBooking.model.ticketChangeStatus": [],
+  "myBooking.store.BoardingPoint": [],
+  "myBooking.store.BpointList": [],
+  "myBooking.store.BusList": [],
+  "myBooking.store.BusesAvailableList": [],
+  "myBooking.store.CurrentSeats": [],
+  "myBooking.store.DpointList": [],
+  "myBooking.store.DroppingPoint": [],
+  "myBooking.store.From": [],
+  "myBooking.store.PassengerDetails": [],
+  "myBooking.store.PaymentDetails": [],
+  "myBooking.store.emailMobile": [],
+  "myBooking.store.panel": [],
+  "myBooking.store.places": [],
+  "myBooking.store.seatNumber": [],
+  "myBooking.store.ticketChangeStatus": [],
+  "myBooking.utilities.StringFile": [],
+  "myBooking.utilities.databaseFunctions": [],
+  "myBooking.view.BoardingPoint": [],
+  "myBooking.view.BoardingPointEdit": [],
+  "myBooking.view.Booking": [],
+  "myBooking.view.Buses": [],
+  "myBooking.view.CancelTicket": [],
+  "myBooking.view.CancelledView": [],
+  "myBooking.view.ChangeSeat": [],
+  "myBooking.view.ConfirmYourBooking": [],
+  "myBooking.view.DroppingPoint": [],
+  "myBooking.view.DroppingPointEdit": [],
+  "myBooking.view.EditBooking": [],
+  "myBooking.view.EditPayment": [],
+  "myBooking.view.EditScreen": [],
+  "myBooking.view.From": [],
+  "myBooking.view.Main": [],
+  "myBooking.view.PassengerDetails": [],
+  "myBooking.view.PaymentDetails": [],
+  "myBooking.view.SelectSeat": [],
+  "myBooking.view.To": [],
+  "myBooking.view.TotalPassengerfields": [],
+  "myBooking.view.cancelPopup": [],
+  "myBooking.view.cancelSummary": [],
+  "myBooking.view.emailMobile": [],
+  "myBooking.view.finalSummary": [],
+  "myBooking.view.formfield": [],
+  "myBooking.view.myBookings": [],
+  "myBooking.view.panelShowDetails": [],
+  "myBooking.view.panelSummary": [],
+  "myBooking.view.showDetails": []
 });
 
 Ext.ClassManager.addNameAliasMappings({
@@ -1249,17 +1320,6 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.layout.wrapper.BoxDock": [],
   "Ext.layout.wrapper.Dock": [],
   "Ext.layout.wrapper.Inner": [],
-  "Ext.log.Base": [],
-  "Ext.log.Logger": [],
-  "Ext.log.filter.Filter": [],
-  "Ext.log.filter.Priority": [],
-  "Ext.log.formatter.Default": [],
-  "Ext.log.formatter.Formatter": [],
-  "Ext.log.formatter.Identity": [],
-  "Ext.log.writer.Console": [],
-  "Ext.log.writer.DocumentTitle": [],
-  "Ext.log.writer.Remote": [],
-  "Ext.log.writer.Writer": [],
   "Ext.mixin.Bindable": [],
   "Ext.mixin.Filterable": [],
   "Ext.mixin.Mixin": [],
@@ -1397,8 +1457,175 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.viewport.Ios": [],
   "Ext.viewport.Viewport": [],
   "Ext.viewport.WindowsPhone": [],
+  "myBooking.controller.BoardingPoint": [],
+  "myBooking.controller.Booking": [],
+  "myBooking.controller.Buses": [],
+  "myBooking.controller.CancelTicket": [],
+  "myBooking.controller.ChangeSeat": [],
+  "myBooking.controller.DatabaseController": [],
+  "myBooking.controller.EditPayment": [],
+  "myBooking.controller.From": [],
+  "myBooking.controller.PassengerDetails": [],
+  "myBooking.controller.PaymentDetails": [],
+  "myBooking.controller.StringFile": [],
+  "myBooking.controller.To": [],
+  "myBooking.controller.confirmSummary": [],
+  "myBooking.controller.databaseFunctions": [],
+  "myBooking.controller.emailMobile": [],
+  "myBooking.controller.finalSummary": [],
+  "myBooking.controller.myBookings": [],
+  "myBooking.controller.panel": [],
+  "myBooking.controller.seatEdit": [],
+  "myBooking.controller.seatSelect": [],
+  "myBooking.model.BoardingPoint": [
+    "widget.BpointModel"
+  ],
+  "myBooking.model.Booking": [],
+  "myBooking.model.BpointList": [
+    "widget.BpointList"
+  ],
+  "myBooking.model.BusList": [
+    "widget.BusModel"
+  ],
+  "myBooking.model.BusesAvailableList": [
+    "widget.BusesAvailableList"
+  ],
+  "myBooking.model.CurrentSeats": [
+    "widget.currentSeatsModel"
+  ],
+  "myBooking.model.DpointList": [
+    "widget.DpointList"
+  ],
+  "myBooking.model.DroppingPoint": [
+    "widget.DpointModel"
+  ],
+  "myBooking.model.From": [
+    "widget.FromModel"
+  ],
+  "myBooking.model.PassengerDetails": [
+    "widget.passengerDetails"
+  ],
+  "myBooking.model.PaymentDetails": [
+    "widget.paymentDetails"
+  ],
+  "myBooking.model.emailMobile": [
+    "widget.emailMobile"
+  ],
+  "myBooking.model.panel": [
+    "widget.panelPassengers"
+  ],
+  "myBooking.model.places": [
+    "widget.places"
+  ],
+  "myBooking.model.seatNumber": [
+    "widget.seatNumberModel"
+  ],
+  "myBooking.model.ticketChangeStatus": [
+    "widget.ticketChangeStatus"
+  ],
+  "myBooking.store.BoardingPoint": [],
+  "myBooking.store.BpointList": [],
+  "myBooking.store.BusList": [],
+  "myBooking.store.BusesAvailableList": [],
+  "myBooking.store.CurrentSeats": [],
+  "myBooking.store.DpointList": [],
+  "myBooking.store.DroppingPoint": [],
+  "myBooking.store.From": [],
+  "myBooking.store.PassengerDetails": [],
+  "myBooking.store.PaymentDetails": [],
+  "myBooking.store.emailMobile": [],
+  "myBooking.store.panel": [],
+  "myBooking.store.places": [],
+  "myBooking.store.seatNumber": [],
+  "myBooking.store.ticketChangeStatus": [],
+  "myBooking.utilities.StringFile": [],
+  "myBooking.utilities.databaseFunctions": [],
+  "myBooking.view.BoardingPoint": [
+    "widget.boardingpoint"
+  ],
+  "myBooking.view.BoardingPointEdit": [
+    "widget.boardingpointedit"
+  ],
+  "myBooking.view.Booking": [
+    "widget.booking"
+  ],
+  "myBooking.view.Buses": [
+    "widget.buses"
+  ],
+  "myBooking.view.CancelTicket": [
+    "widget.CancelTicket"
+  ],
+  "myBooking.view.CancelledView": [
+    "widget.cancelledView"
+  ],
+  "myBooking.view.ChangeSeat": [
+    "widget.changeseat"
+  ],
+  "myBooking.view.ConfirmYourBooking": [
+    "widget.confirmyourbooking"
+  ],
+  "myBooking.view.DroppingPoint": [
+    "widget.droppingpoint"
+  ],
+  "myBooking.view.DroppingPointEdit": [
+    "widget.droppingpointedit"
+  ],
+  "myBooking.view.EditBooking": [
+    "widget.editBooking"
+  ],
+  "myBooking.view.EditPayment": [
+    "widget.editpayment"
+  ],
+  "myBooking.view.EditScreen": [
+    "widget.editScreen"
+  ],
+  "myBooking.view.From": [
+    "widget.frompopup"
+  ],
   "myBooking.view.Main": [
     "widget.main"
+  ],
+  "myBooking.view.PassengerDetails": [
+    "widget.passengerdetails"
+  ],
+  "myBooking.view.PaymentDetails": [
+    "widget.paymentdetails"
+  ],
+  "myBooking.view.SelectSeat": [
+    "widget.seats"
+  ],
+  "myBooking.view.To": [
+    "widget.ToPopup"
+  ],
+  "myBooking.view.TotalPassengerfields": [
+    "widget.totalpassenger"
+  ],
+  "myBooking.view.cancelPopup": [
+    "widget.cancelpopup"
+  ],
+  "myBooking.view.cancelSummary": [
+    "widget.cancelSummary"
+  ],
+  "myBooking.view.emailMobile": [
+    "widget.emailMobile"
+  ],
+  "myBooking.view.finalSummary": [
+    "widget.finalSummary"
+  ],
+  "myBooking.view.formfield": [
+    "widget.formfield"
+  ],
+  "myBooking.view.myBookings": [
+    "widget.myBookings"
+  ],
+  "myBooking.view.panelShowDetails": [
+    "widget.panelShowDetails"
+  ],
+  "myBooking.view.panelSummary": [
+    "widget.panelSummary"
+  ],
+  "myBooking.view.showDetails": [
+    "widget.showDetails"
   ]
 });
 

@@ -165,3 +165,36 @@
 	background-image:-ms-linear-gradient(top, #0398ff,#007ad0 3%,#005c9d);
 	color:#fff;
 }
+.busImage{
+	background-image:url('../../resources/icons/travel_bus.png');
+	height: 125px; width: 125px; margin-left:33%;
+}
+.x-button.x-button-action.closeclass{
+	    background-image: none;
+    background-color: black;
+    border: 0px solid black;
+    color: #A15F17;
+    
+}
+.noborder{
+	z-index: 8 !important;
+    padding: 0px;
+    border-radius: 0px;
+}
+.x-inner.x-panel-inner.x-html.x-vertical.x-align-stretch.x-pack-start.x-layout-box{
+	padding: 0px;
+}
+.x-list.selectList .x-list-item.x-item-selected.x-list-item-tpl{
+	background-image: none;
+    background-color: #E8A761;
+    color: black;
+    /* background-image: -webkit-linear-gradient(top, #0398ff,#007ad0 3%,#005c9d); */
+    background-image: -moz-linear-gradient(top, #0398ff,#007ad0 3%,#005c9d);
+    background-image: -o-linear-gradient(top, #0398ff,#007ad0 3%,#005c9d);
+    background-image: -ms-linear-gradient(top, #0398ff,#007ad0 3%,#005c9d);
+    color: black;
+    border-top-color: #E8A761;
+}
+.x-panel.x-floating.noborder > .x-dock.x-sized{
+	margin: -1px;
+}
